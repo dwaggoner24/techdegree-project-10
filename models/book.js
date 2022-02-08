@@ -14,15 +14,15 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Book.init({
-    title:{
+    title: {
       type: DataTypes.STRING, 
       allowNull: false, 
-      validates: {
+      validate: {
         notNull: {
-          msg: 'Please provide a value for "title"',
+          msg: 'Please provide a value for "Title"',
         }, 
         notEmpty: {
-          msg: 'Please provide a value for "title"'
+          msg: 'Please provide a value for "Title"'
         }
       },
     },
@@ -31,10 +31,10 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false, 
       validate: {
         notNull: {
-          msg: 'Please provide a value for "author"',
+          msg: 'Please provide a value for "Author"',
         }, 
         notEmpty: {
-          msg: 'Please provide a value for "author"'
+          msg: 'Please provide a value for "Author"'
         }
       },
     },
