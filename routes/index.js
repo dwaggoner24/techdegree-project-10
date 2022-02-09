@@ -55,9 +55,13 @@ router.post('/books/new', asyncHandler(async (req, res) => {
 }));
 
 //shows book details form
-router.get('/books/:id', asyncHandler(async (req, res) => {
+router.get('/books/:id', asyncHandler(async (req, res, next) => {
     const book = await Book.findByPk(req.params.id);
-    res.render('update-book', {book, title: book.title});
+    if (book) {
+      res.render('update-book', {book, title: book.title});
+    } else{
+      next();
+    }
     }));
 
 //updates book info in database
